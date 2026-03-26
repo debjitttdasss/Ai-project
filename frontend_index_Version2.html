@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Stealth Game AI (A* + Dijkstra)</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Stealth Game AI: Safe A* + Dijkstra</h1>
+
+    <div class="toolbar">
+      <button id="modeBtn">Toggle Mode</button>
+      <button id="pauseBtn">Pause/Resume</button>
+      <button id="resetBtn">Reset</button>
+      <span id="status"></span>
+    </div>
+
+    <canvas id="gameCanvas" width="600" height="600"></canvas>
+
+    <div class="help">
+      <p><strong>Controls:</strong> Arrow keys to move player.</p>
+      <p>Yellow = visible, pale = near-visible danger, green = safe A* path, gray = Dijkstra shortest path.</p>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
