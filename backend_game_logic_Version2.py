@@ -1,4 +1,4 @@
-from pathfinding import (
+from backend_pathfinding_Version2 import (
     ROWS, COLS,
     get_visible_cells, expand_danger_ring, build_danger_map,
     astar_safe, dijkstra_shortest

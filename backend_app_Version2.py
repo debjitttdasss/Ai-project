@@ -1,19 +1,21 @@
+import os
 import time
 from flask import Flask, jsonify, request, send_from_directory
-from game_logic import GameState
+from backend_game_logic_Version2 import GameState
 
-app = Flask(__name__, static_folder="../frontend", static_url_path="")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+app = Flask(__name__, static_folder=BASE_DIR, static_url_path="")
 game = GameState()
 
 
 @app.route("/")
 def home():
-    return send_from_directory(app.static_folder, "index.html")
+    return send_from_directory(app.static_folder, "frontend_index_Version2.html")
 
 
-@app.route("/styles.css")
+@app.route("/frontend_styles_Version2.css")
 def styles():
-    return send_from_directory(app.static_folder, "styles.css")
+    return send_from_directory(app.static_folder, "frontend_styles_Version2.css")
 
 
 @app.route("/app.js")
