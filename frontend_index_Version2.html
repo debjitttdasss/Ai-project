@@ -3,26 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Stealth Game AI (A* + Dijkstra)</title>
+  <title>Stealth Game AI Simulator</title>
   <link rel="stylesheet" href="/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
-    <h1>Stealth Game AI: Safe A* + Dijkstra</h1>
+    <header class="header">
+      <h1>Stealth Game AI Simulator</h1>
+      <p class="subtitle">Safe A* Pathfinding + Dijkstra</p>
+    </header>
 
-    <div class="toolbar">
-      <button id="modeBtn">Toggle Mode</button>
-      <button id="pauseBtn">Pause/Resume</button>
-      <button id="resetBtn">Reset</button>
-      <span id="status"></span>
-    </div>
+    <main class="main-content">
+      <div class="controls-panel">
+        <div class="toolbar">
+          <button id="modeBtn" class="btn primary-btn">
+            <span class="icon">🔄</span> Toggle Mode
+          </button>
+          <button id="pauseBtn" class="btn secondary-btn">
+            <span class="icon">⏸️</span> Pause/Resume
+          </button>
+          <button id="resetBtn" class="btn danger-btn">
+            <span class="icon">↩️</span> Reset
+          </button>
+        </div>
+        <div class="status-container">
+          Status: <span id="status" class="status-badge" role="status" aria-live="polite">Active</span>
+        </div>
+      </div>
 
-    <canvas id="gameCanvas" width="600" height="600"></canvas>
+      <div class="canvas-container">
+        <canvas id="gameCanvas" width="600" height="600"></canvas>
+      </div>
+    </main>
 
-    <div class="help">
-      <p><strong>Controls:</strong> Arrow keys to move player.</p>
-      <p>Yellow = visible, pale = near-visible danger, green = safe A* path, gray = Dijkstra shortest path.</p>
-    </div>
+    <footer class="help">
+      <div class="help-section">
+        <h3>🎮 Controls</h3>
+        <p>Use <strong>Arrow Keys</strong> to move the player manually.</p>
+      </div>
+      <div class="help-section legend">
+        <h3>Legend</h3>
+        <ul class="legend-list">
+          <li><span class="color-box player"></span> Player</li>
+          <li><span class="color-box enemy"></span> Enemy</li>
+          <li><span class="color-box safe"></span> Safe A* Path</li>
+          <li><span class="color-box shortest"></span> Dijkstra Path</li>
+          <li><span class="color-box visible"></span> Visible Danger</li>
+          <li><span class="color-box near-danger"></span> Near Danger</li>
+        </ul>
+      </div>
+    </footer>
   </div>
 
   <script src="/app.js"></script>
